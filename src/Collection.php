@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace AlvinChevolleaux\Collection;
 
-interface Collection extends \Traversable, \Countable
+interface Collection extends \Countable
 {
     public static function fromArray(array $data): Collection;
     public static function T(): string;

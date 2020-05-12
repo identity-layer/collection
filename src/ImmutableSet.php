@@ -19,7 +19,7 @@ use IteratorAggregate;
  */
 abstract class ImmutableSet implements Collection, IteratorAggregate
 {
-    private array $items;
+    private $items;
 
     private function __construct(array $items)
     {
@@ -37,7 +37,7 @@ abstract class ImmutableSet implements Collection, IteratorAggregate
         }
     }
 
-    final public static function fromArray(array $data): ImmutableSet
+    final public static function fromArray(array $data): Collection
     {
         return new static($data);
     }

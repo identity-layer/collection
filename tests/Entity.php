@@ -6,7 +6,7 @@ namespace AlvinChevolleaux\Tests\Collection;
 
 class Entity
 {
-    private string $id;
+    private $id;
 
     public function __construct(string $id)
     {

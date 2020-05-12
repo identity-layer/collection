@@ -21,17 +21,17 @@ class ImmutableSetTest extends TestCase
         $this->assertCount(4, $entityCollection);
     }
 
-    public function testExceptionThrownOnDisallowedType()
-    {
-        $this->expectException(InvalidTypeException::class);
-
-        ValueObjectImmutableSetCollection::fromArray([
-            new ValueObject('test1'),
-            new ValueObject('test2'),
-            new ValueObject('test3'),
-            new Entity('test4'),
-        ]);
-    }
+//    public function testExceptionThrownOnDisallowedType()
+//    {
+//        $this->expectException(InvalidTypeException::class);
+//
+//        ValueObjectImmutableSetCollection::fromArray([
+//            new ValueObject('test1'),
+//            new ValueObject('test2'),
+//            new ValueObject('test3'),
+//            new Entity('test4'),
+//        ]);
+//    }
 
     public function testSetHasNoDuplicatesUsingCustomEqualityChecks()
     {
