@@ -1,4 +1,4 @@
-`# alvnchevolleaux/collection
+# alvnchevolleaux/collection
 
 ## Quickstart
 `composer require alvinchevolleaux/collection`
@@ -72,9 +72,17 @@ $set1->equals($set2); // true
 #### Map
 Map through the collection to produce a new collection of the same type:
 ```
+$numbers = NumberCollection::fromArray([
+    new Number(1),
+    new Number(2),
+    new Number(3),
+]);
+
 $squaredNumbers = $numbers->map(function (Number $number) {
     return new Number($number->pow(2));
 });
+
+$numbers; // 1, 4, 9
 ```
 In this example we square a collection of numbers and return the resulting collection.
 
@@ -91,7 +99,7 @@ $numbersAdded = $numbers->reduce(function ($carry, Number $number) {
     return $carry;
 }));
 
-echo $numbersAdded; // 6
+$numbersAdded; // 6
 ```
 
 #### Filter
