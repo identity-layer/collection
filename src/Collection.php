@@ -4,9 +4,14 @@ declare(strict_types=1);
 
 namespace AlvinChevolleaux\Collection;
 
-interface Collection extends \Countable
+use Countable;
+use IteratorAggregate;
+
+/**
+ * @template-extends IteratorAggregate<T>
+ */
+interface Collection extends Countable, IteratorAggregate
 {
-    public static function fromArray(array $data): Collection;
     public static function T(): string;
     public function equals(Collection $collection): bool;
     public function map(callable $fn): Collection;

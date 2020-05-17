@@ -16,8 +16,11 @@ use IteratorAggregate;
  * The immutable set does not enforce any restrictions on the items it contains. It will make a shallow clone of
  * all items but these may contain references to other objects. You should use immutable objects only within this
  * collection to ensure full immutability.
+ *
+ * @psalm-template T
+ * @template-extends IteratorAggregate<TKey, T>
  */
-abstract class ImmutableSet implements Collection, IteratorAggregate
+abstract class ImmutableSet implements Collection
 {
     private $items;
 
@@ -37,15 +40,15 @@ abstract class ImmutableSet implements Collection, IteratorAggregate
         }
     }
 
+    abstract public static function T(): string;
+    abstract public static function itemsEqual(object $item1, object $item2): bool;
+
     final public static function fromArray(array $data): Collection
     {
         return new static($data);
     }
 
-    abstract public static function T(): string;
-    abstract public static function itemsEqual(object $item1, object $item2): bool;
-
-    public function getIterator()
+    final public function getIterator()
     {
         return new ArrayIterator($this->items);
     }
