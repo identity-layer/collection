@@ -48,7 +48,7 @@ abstract class ImmutableSet implements Collection
         return new static($data);
     }
 
-    final public function toArray()
+    final public function toArray(): array
     {
         return $this->items;
     }
