@@ -2,3 +2,4 @@
 vendor
 composer.lock
 Dockerfile
+.phpunit.result.cache
