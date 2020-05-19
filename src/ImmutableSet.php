@@ -43,7 +43,7 @@ abstract class ImmutableSet implements Collection
     abstract public static function T(): string;
     abstract public static function itemsEqual(object $item1, object $item2): bool;
 
-    final public static function fromArray(array $data): Collection
+    final public static function fromArray(array $data)
     {
         return new static($data);
     }
