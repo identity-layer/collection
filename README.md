@@ -1,5 +1,8 @@
 # alvnchevolleaux/collection
 
+## Intro
+PHP lacks generics and therefore a user-land library such as this can be a useful reusable base implementation to provide functional concepts such as an immutable set. In paradigms such as FP or DDD, immutability is an essential component to the core domain to encapsulate the state of your objects. The immutable set implements this in a ready to use library.
+
 ## Quickstart
 `composer require alvinchevolleaux/collection`
 ```
@@ -64,10 +67,13 @@ $set2 = NumberCollection::fromArray([
     new Number(1),
     new Number(2),
     new Number(3),
+    new Number(3),
 ]);
 
 $set1->equals($set2); // true
 ```
+Note that the order items are added makes no difference. Duplicate items will simply be removed from the 
+collection automatically and these will not effect any comparison either.
 
 #### Map
 Map through the collection to produce a new collection of the same type:
@@ -84,7 +90,8 @@ $squaredNumbers = $numbers->map(function (Number $number) {
 
 $numbers; // 1, 4, 9
 ```
-In this example we square a collection of numbers and return the resulting collection.
+In this example we square a collection of numbers and return the resulting collection. A new collection will be
+returned. It works in much the same way the array_map function does except it does not return an array.
 
 #### Reduce
 ```
@@ -120,3 +127,5 @@ $filteredFruit = $fruits->filter(function (ValueObject $fruit) {
 
 $filteredFruit; // pear, kiwi, plum
 ```
+In this example we return a new collection filtered using the callback provided. It works much the same as the 
+array_filter function built into PHP but returns a new collection of the same type instead of an array.
