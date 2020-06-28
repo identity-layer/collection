@@ -9,7 +9,7 @@ use AlvinChevolleaux\Collection\ImmutableSet;
 
 class EntityImmutableSetCollection extends ImmutableSet
 {
-    public static function T(): string
+    public static function t(): string
     {
         return Entity::class;
     }

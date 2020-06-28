@@ -1,7 +1,9 @@
 # alvnchevolleaux/collection
 
 ## Intro
-PHP lacks generics and therefore a user-land library such as this can be a useful reusable base implementation to provide functional concepts such as an immutable set. In paradigms such as FP or DDD, immutability is an essential component to the core domain to encapsulate the state of your objects. The immutable set implements this in a ready to use library.
+PHP lacks generics and therefore a user-land library such as this can be a useful reusable base implementation 
+to provide concepts such as an immutable set. In paradigms such as Functional Programming or Domain Driven Design, 
+immutability is an essential component to encapsulate the state of your objects.
 
 ## Quickstart
 `composer require alvinchevolleaux/collection`

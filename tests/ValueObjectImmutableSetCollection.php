@@ -14,7 +14,7 @@ use AlvinChevolleaux\Collection\ImmutableSet;
  */
 class ValueObjectImmutableSetCollection extends ImmutableSet
 {
-    public static function T(): string
+    public static function t(): string
     {
         return ValueObject::class;
     }

@@ -9,7 +9,7 @@ use PHPUnit\Framework\TestCase;
 
 class ImmutableSetTest extends TestCase
 {
-    public function testValidTypesInstantiation()
+    public function testValidTypesInstantiation(): void
     {
         $entityCollection = EntityImmutableSetCollection::fromArray([
             new Entity('apple'),
@@ -21,19 +21,20 @@ class ImmutableSetTest extends TestCase
         $this->assertCount(4, $entityCollection);
     }
 
-//    public function testExceptionThrownOnDisallowedType()
-//    {
-//        $this->expectException(InvalidTypeException::class);
-//
-//        ValueObjectImmutableSetCollection::fromArray([
-//            new ValueObject('test1'),
-//            new ValueObject('test2'),
-//            new ValueObject('test3'),
-//            new Entity('test4'),
-//        ]);
-//    }
+    public function testExceptionThrownOnDisallowedType(): void
+    {
+        $this->expectException(InvalidTypeException::class);
 
-    public function testSetHasNoDuplicatesUsingCustomEqualityChecks()
+        // @phpstan-ignore-next-line
+        ValueObjectImmutableSetCollection::fromArray([
+            new ValueObject('test1'),
+            new ValueObject('test2'),
+            new ValueObject('test3'),
+            new Entity('test4'),
+        ]);
+    }
+
+    public function testSetHasNoDuplicatesUsingCustomEqualityChecks(): void
     {
         $valueObjectCollection = ValueObjectImmutableSetCollection::fromArray([
             new ValueObject('test1'),
@@ -56,7 +57,7 @@ class ImmutableSetTest extends TestCase
         $this->assertCount(4, $entityCollection);
     }
 
-    public function testSetEquality()
+    public function testSetEquality(): void
     {
         $valueObjectCollection1 = ValueObjectImmutableSetCollection::fromArray([
             new ValueObject(3),
@@ -80,7 +81,7 @@ class ImmutableSetTest extends TestCase
         $this->assertFalse($valueObjectCollection1->equals($valueObjectCollection3));
     }
 
-    public function testWithAdditionalItemAndImmutability()
+    public function testWithAdditionalItemAndImmutability(): void
     {
         $valueObjectCollection = ValueObjectImmutableSetCollection::fromArray([
             new ValueObject('3'),
@@ -95,7 +96,7 @@ class ImmutableSetTest extends TestCase
         $this->assertNotEquals($valueObjectCollection, $newValueObject);
     }
 
-    public function testWithoutAdditionalItemAndImmutability()
+    public function testWithoutAdditionalItemAndImmutability(): void
     {
         $valueObjectCollection = ValueObjectImmutableSetCollection::fromArray([
             new ValueObject('3'),
@@ -110,7 +111,7 @@ class ImmutableSetTest extends TestCase
         $this->assertNotEquals($valueObjectCollection, $newValueObject);
     }
 
-    public function testIteration()
+    public function testIteration(): void
     {
         $entityCollection = EntityImmutableSetCollection::fromArray([
             new Entity('1'),
@@ -119,7 +120,7 @@ class ImmutableSetTest extends TestCase
         ]);
 
         $count = 0;
-        /** @var Uuser $entity */
+
         foreach ($entityCollection as $entity) {
             $this->assertInstanceOf(Entity::class, $entity);
             $count++;
@@ -128,7 +129,7 @@ class ImmutableSetTest extends TestCase
         $this->assertCount($count, $entityCollection);
     }
 
-    public function testMap()
+    public function testMap(): void
     {
         $valueObjectCollection1 = ValueObjectImmutableSetCollection::fromArray([
             new ValueObject(1),
@@ -153,7 +154,7 @@ class ImmutableSetTest extends TestCase
         $this->assertEquals($valueObjectCollection2, $squaredCollection);
     }
 
-    public function testReduce()
+    public function testReduce(): void
     {
         $valueObjectCollection1 = ValueObjectImmutableSetCollection::fromArray([
             new ValueObject(1),
@@ -167,7 +168,7 @@ class ImmutableSetTest extends TestCase
         }));
     }
 
-    public function testFilter()
+    public function testFilter(): void
     {
         $fruits = ValueObjectImmutableSetCollection::fromArray([
             new ValueObject('apple'),

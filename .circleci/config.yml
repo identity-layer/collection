@@ -30,5 +30,14 @@ jobs:
           paths:
             - ./vendor
 
-      # run tests with phpunit or codecept
-      - run: ./vendor/bin/phpunit
+      - run:
+          name: PHP Static Analysis
+          command: ./vendor/bin/phpstan analyse
+
+      - run:
+          name: PHP Coding Standards
+          command: ./vendor/bin/phpcs --colors --standard=ruleset.xml
+
+      - run:
+          name: PHP Unit Tests
+          command: ./vendor/bin/phpunit

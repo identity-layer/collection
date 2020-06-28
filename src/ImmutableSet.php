@@ -7,7 +7,6 @@ namespace AlvinChevolleaux\Collection;
 use AlvinChevolleaux\Collection\Exception\InvalidArgumentException;
 use AlvinChevolleaux\Collection\Exception\InvalidTypeException;
 use ArrayIterator;
-use IteratorAggregate;
 
 /**
  * Class ImmutableSet
@@ -16,15 +15,13 @@ use IteratorAggregate;
  * The immutable set does not enforce any restrictions on the items it contains. It will make a shallow clone of
  * all items but these may contain references to other objects. You should use immutable objects only within this
  * collection to ensure full immutability.
- *
- * @psalm-template T
- * @template-extends IteratorAggregate<TKey, T>
  */
 abstract class ImmutableSet implements Collection
 {
+    /** @var array */
     private $items;
 
-    private function __construct(array $items)
+    final private function __construct(array $items)
     {
         $this->items = [];
 
@@ -40,10 +37,10 @@ abstract class ImmutableSet implements Collection
         }
     }
 
-    abstract public static function T(): string;
+    abstract public static function t(): string;
     abstract public static function itemsEqual(object $item1, object $item2): bool;
 
-    final public static function fromArray(array $data)
+    final public static function fromArray(array $data): ImmutableSet
     {
         return new static($data);
     }
@@ -124,6 +121,10 @@ abstract class ImmutableSet implements Collection
         return static::fromArray(array_map($fn, $this->items));
     }
 
+    /**
+     * @param mixed $initial
+     * @return mixed
+     */
     final public function reduce(callable $fn, $initial = null)
     {
         return array_reduce($this->items, $fn, $initial);
@@ -134,7 +135,8 @@ abstract class ImmutableSet implements Collection
         return static::fromArray(array_filter($this->items, $fn));
     }
 
-    private function typeOrException(object $item): void {
+    private function typeOrException(object $item): void
+    {
         if (!is_a($item, static::T())) {
             throw new InvalidTypeException(
                 sprintf(
