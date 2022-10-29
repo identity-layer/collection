@@ -4,9 +4,10 @@ declare(strict_types=1);
 
 namespace IdentityLayer\Collection;
 
+use ArrayIterator;
 use IdentityLayer\Collection\Exception\InvalidArgumentException;
 use IdentityLayer\Collection\Exception\InvalidTypeException;
-use ArrayIterator;
+use Traversable;
 
 /**
  * Class ImmutableSet
@@ -50,7 +51,7 @@ abstract class ImmutableSet implements Collection
         return $this->items;
     }
 
-    final public function getIterator()
+    final public function getIterator(): Traversable
     {
         return new ArrayIterator($this->items);
     }

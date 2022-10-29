@@ -6,6 +6,7 @@ namespace IdentityLayer\Collection;
 
 use Countable;
 use IteratorAggregate;
+use Traversable;
 
 interface Collection extends Countable, IteratorAggregate
 {
@@ -15,4 +16,5 @@ interface Collection extends Countable, IteratorAggregate
     /** @return mixed */
     public function reduce(callable $fn);
     public function filter(callable $fn): Collection;
+    public function getIterator(): Traversable;
 }
