@@ -5,6 +5,8 @@
 .gitignore export-ignore
 .circleci export-ignore
 phpunit.xml.dist export-ignore
+ruleset.xml export-ignore
+phpstan.neon export-ignore
 CHANGELOG.md export-ignore
 README.md export-ignore
 tests/ export-ignore
