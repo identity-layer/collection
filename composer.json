@@ -1,5 +1,5 @@
 {
-    "name": "alvinchevolleaux/collection",
+    "name": "identity-layer/collection",
     "description": "Generic collection library",
     "type": "library",
     "license": "MIT",
@@ -20,12 +20,12 @@
     },
     "autoload": {
         "psr-4": {
-            "AlvinChevolleaux\\Collection\\": "src/"
+            "IdentityLayer\\Collection\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "AlvinChevolleaux\\Tests\\Collection\\": "tests/"
+            "IdentityLayer\\Tests\\Collection\\": "tests/"
         }
     }
 }
