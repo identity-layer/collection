@@ -38,7 +38,7 @@ abstract class ImmutableSet implements Collection
     }
 
     abstract public static function t(): string;
-    abstract public static function itemsEqual(\object $item1, \object $item2): bool;
+    abstract public static function itemsEqual(object $item1, object $item2): bool;
 
     final public static function fromArray(array $data): ImmutableSet
     {
