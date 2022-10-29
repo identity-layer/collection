@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace AlvinChevolleaux\Tests\Collection;
+namespace IdentityLayer\Tests\Collection;
 
-use AlvinChevolleaux\Collection\Exception\InvalidTypeException;
-use AlvinChevolleaux\Collection\ImmutableSet;
+use IdentityLayer\Collection\Exception\InvalidTypeException;
+use IdentityLayer\Collection\ImmutableSet;
 
 class EntityImmutableSetCollection extends ImmutableSet
 {

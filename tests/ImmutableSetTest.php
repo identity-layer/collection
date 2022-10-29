@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace AlvinChevolleaux\Tests\Collection;
+namespace IdentityLayer\Tests\Collection;
 
-use AlvinChevolleaux\Collection\Exception\InvalidTypeException;
+use IdentityLayer\Collection\Exception\InvalidTypeException;
 use PHPUnit\Framework\TestCase;
 
 class ImmutableSetTest extends TestCase

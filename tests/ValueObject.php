@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace AlvinChevolleaux\Tests\Collection;
+namespace IdentityLayer\Tests\Collection;
 
 class ValueObject
 {

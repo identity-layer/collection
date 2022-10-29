@@ -6,14 +6,14 @@ to provide concepts such as an immutable set. In paradigms such as Functional Pr
 immutability is an essential component to encapsulate the state of your objects.
 
 ## Quickstart
-`composer require alvinchevolleaux/collection`
+`composer require identity-layer/collection`
 ```
 <?php
 
 declare(strict_types=1);
 
-use AlvinChevolleaux\Collection\Exception\InvalidTypeException;
-use AlvinChevolleaux\Collection\ImmutableSet;
+use IdentityLayer\Collection\Exception\InvalidTypeException;
+use IdentityLayer\Collection\ImmutableSet;
 
 /**
  * Class UserCollection

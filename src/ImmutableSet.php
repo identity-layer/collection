@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace AlvinChevolleaux\Collection;
+namespace IdentityLayer\Collection;
 
-use AlvinChevolleaux\Collection\Exception\InvalidArgumentException;
-use AlvinChevolleaux\Collection\Exception\InvalidTypeException;
+use IdentityLayer\Collection\Exception\InvalidArgumentException;
+use IdentityLayer\Collection\Exception\InvalidTypeException;
 use ArrayIterator;
 
 /**
  * Class ImmutableSet
- * @package AlvinChevolleaux\Collection
+ * @package IdentityLayer\Collection
  *
  * The immutable set does not enforce any restrictions on the items it contains. It will make a shallow clone of
  * all items but these may contain references to other objects. You should use immutable objects only within this

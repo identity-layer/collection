@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace AlvinChevolleaux\Collection\Exception;
+namespace IdentityLayer\Collection\Exception;
 
 class InvalidTypeException extends InvalidArgumentException
 {

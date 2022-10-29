@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace AlvinChevolleaux\Tests\Collection;
+namespace IdentityLayer\Tests\Collection;
 
-use AlvinChevolleaux\Collection\Exception\InvalidTypeException;
-use AlvinChevolleaux\Collection\ImmutableSet;
+use IdentityLayer\Collection\Exception\InvalidTypeException;
+use IdentityLayer\Collection\ImmutableSet;
 
 /**
  * Class ValueObjectImmutableSetCollection
- * @package AlvinChevolleaux\Tests\Collection
+ * @package IdentityLayer\Tests\Collection
  * @method static ValueObjectImmutableSetCollection fromArray(ValueObject[] $item)
  */
 class ValueObjectImmutableSetCollection extends ImmutableSet
